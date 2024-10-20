@@ -318,9 +318,10 @@ def forge_main_entry():
         ui_txt2img_hr_distilled_cfg,
     ]
 
-    ui_forge_preset.change(on_preset_change, inputs=[ui_forge_preset], outputs=output_targets, queue=False, show_progress=False)
+    # Commented to apply the settings on ui-config.json
+    #ui_forge_preset.change(on_preset_change, inputs=[ui_forge_preset], outputs=output_targets, queue=False, show_progress=False)
     ui_forge_preset.change(js="clickLoraRefresh", fn=None, queue=False, show_progress=False)
-    Context.root_block.load(on_preset_change, inputs=None, outputs=output_targets, queue=False, show_progress=False)
+    #Context.root_block.load(on_preset_change, inputs=None, outputs=output_targets, queue=False, show_progress=False)
 
     refresh_model_loading_parameters()
     return
